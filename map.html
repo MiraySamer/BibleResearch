@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>World Map</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+
+        #logo{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #home{
+            position: absolute;
+            top: 20px; 
+            right: 40px;
+        }
+
+        #home:hover{
+            background-color: rgba(240, 239, 239, 0.741);
+            border-radius: 80px;
+        }
+
+        h1{
+            display: flex;
+            position: absolute;
+            top: 100px;
+            font-style: italic;
+            font-family: "Grechen Fuemen", serif;
+            margin-bottom: 60px;
+        }
+
+        .map-container {
+            position: relative;
+            top: 50px;
+            width: 680px;
+        }
+
+        .map-container img {
+            width: 100%;
+        }
+
+        .pin {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+           
+        }
+
+        /* Positioning the pins (Adjust as needed) */
+        .northamerica { top: 30%; left: 16%; }
+        .europe { top: 25%; left: 50%; }
+        .africa { top: 50%; left: 50%; }
+        .asia { top: 25%; left: 68%; }
+        .southamerica { top: 60%; left: 26%; }
+        .australia { top: 68%; left: 85%; }
+
+        /* Hover effect */
+        .pin:hover {
+            transform: scale(1.3);
+            background-color: rgb(96, 14, 14);
+        }
+
+        .pin:active {
+            transform: scale(1.3);
+            background-color: rgb(96, 14, 14);
+        }
+
+        @media (max-width: 768px) {
+        h1 {
+            font-size: 28px;
+            margin-top: 50px;
+            top: 40px;
+        }
+
+        .pin {
+            width: 20px;
+            height: 20px;
+        }
+
+        .map-container {
+            position: relative;
+            top: 40px;
+            width: 600px;
+            margin-top: -80px;
+        }
+
+        #logo{
+            left: 2px;
+            width: 120px;
+            height: 50px;
+        }
+
+        #home{
+            right: 20px;
+            height: 20px;
+            top: 18px;
+        }
+}
+    </style>
+</head>
+<div>
+    <img src="./logo.png" width="140px" height="60px" id="logo">
+    <a href="./index.html" id="home"><img src="./home.png" height="60px" title="Home"></a> 
+</div>
+
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <h1> Bible translations around the World!</h1>
+
+    <div class="map-container">
+        
+        <img src="./map.jpg" alt="World Map" width="600px">
+        
+        <!-- Location Pins -->
+        <a href="NorthAmerica.html" class="pin northamerica" title="Northamerica"><img src="./location.png" alt="Northamerica"></a>
+        <a href="europe.html" class="pin europe" title="Europe"><img src="./location.png" alt="Europe"></a>
+        <a href="africa.html" class="pin africa" title="Africa"><img src="./location.png" alt="Africa"></a>
+        <a href="asia.html" class="pin asia" title="Asia"><img src="./location.png" alt="Asia"></a>
+        <a href="SouthAmerica.html" class="pin southamerica" title="Southamerica"><img src="./location.png" alt="Southamerica"></a>
+        <a href="australia.html" class="pin australia" title="Australia"><img src="./location.png" alt="Australia"></a>
+    </div>
+
+</body>
+</html>

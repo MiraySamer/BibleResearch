@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia</title>
+    <style>
+      
+      body{
+        background-color: rgba(206, 227, 247, 0.837);
+      }
+
+      #head{
+        margin-bottom: 50px;
+      }
+
+        .map {
+            margin-top: 60px;
+            margin-left: 20px;
+            max-width: 100%;
+            height: auto;
+            border: 0.6px solid black;
+            border-radius: 20px;
+        }
+
+        .sticky-note {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            background: #ffeb3b99;
+            padding: 20px; 
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            transform: rotate(-3deg);
+        }
+
+        .one{
+            position: absolute;
+            top: 120px;
+            left: 380px;
+        }
+
+        .two{
+            position: absolute;
+            top: 120px;
+            left: 980px;
+        }
+
+        .three{
+            position: absolute;
+            top: 240px;
+            left: 680px;
+            transform: rotate(3deg);
+        }
+
+        .four{
+            height: 400px;
+            position: absolute;
+            top: 120px;
+            left: 1280px;
+            transform: none;
+        }
+
+        .sticky-note::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: red;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateX(-50%);
+        }
+
+        .sticky-note::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            width: 3px;
+            height: 15px;
+            background: darkred;
+            transform: translateX(-50%);
+        }
+
+        #logo{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #home{
+            position: absolute;
+            top: 20px; 
+            right: 40px;
+        }
+
+        #home:hover{
+            background-color: rgba(240, 239, 239, 0.741);
+            border-radius: 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="head">
+        <img src="./logooo.png" width="140px" height="60px" id="logo">
+        <a href="./map.html" id="home"><img src="./globe.png" height="60px" title="Home"></a> 
+    </div>
+
+    <div>
+
+        <img class="map" src="./Australia.webp" alt="Map" width="340px">
+        <div class="sticky-note one" title="1">
+            This is a sticky note! 📌
+        </div>
+        <div class="sticky-note two" title="2">
+            This is a sticky note! 📌
+        </div>
+        <div class="sticky-note three" title="3">
+            This is a sticky note! 📌
+        </div>
+        <div class="sticky-note four" title="4">
+            This is a sticky note! 📌
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Plane Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #planeButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        #planeButton img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Map -->
+    <img id="map" src="./map.jpg" width="800" height="450">
+
+    <!-- Canvas for drawing the plane and trail -->
+    <canvas id="canvas" width="800" height="450"></canvas>
+
+    <!-- Plane Button -->
+    <button id="planeButton">
+        <img src="./plane.png" alt="Plane">
+    </button>
+</div>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const planeButton = document.getElementById("planeButton");
+    const planeImg = new Image();
+    planeImg.src = "./plane.png"; // Replace with actual plane image
+
+    // Coordinates for flight path (adjust as needed)
+    const flightPath = [
+        { x: 400, y: 250 }, // Africa
+        { x: 470, y: 160 }, // Europe
+        { x: 250, y: 120 }, // North America
+        { x: 220, y: 300 }, // South America
+        { x: 600, y: 380 }, // Australia
+        { x: 550, y: 120 }  // Asia
+    ];
+
+    let index = 0;
+    let plane = { x: flightPath[0].x, y: flightPath[0].y };
+    let isFlying = false;
+
+    function drawScene() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the flight path
+        ctx.beginPath();
+        ctx.moveTo(flightPath[0].x, flightPath[0].y);
+        for (let i = 1; i <= index; i++) {
+            ctx.lineTo(flightPath[i].x, flightPath[i].y);
+        }
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Draw the plane
+        ctx.drawImage(planeImg, plane.x - 15, plane.y - 15, 30, 30);
+    }
+
+    function animateFlight() {
+        if (!isFlying || index >= flightPath.length - 1) return;
+
+        let nextPoint = flightPath[index + 1];
+        let dx = nextPoint.x - plane.x;
+        let dy = nextPoint.y - plane.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 2) {
+            index++;
+            if (index >= flightPath.length - 1) {
+                isFlying = false;
+                return;
+            }
+        }
+
+        plane.x += dx * 0.05; // Smooth transition
+        plane.y += dy * 0.05;
+
+        drawScene();
+        requestAnimationFrame(animateFlight);
+    }
+
+    planeButton.addEventListener("click", () => {
+        if (!isFlying) {
+            index = 0;
+            plane.x = flightPath[0].x;
+            plane.y = flightPath[0].y;
+            isFlying = true;
+            animateFlight();
+        }
+    });
+
+    planeImg.onload = drawScene;
+</script>
+
+</body>
+</html>
