@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>North America</title>
     <style>
       
@@ -48,17 +49,19 @@
             position: absolute;
             top: 120px;
             left: 980px;
+            height: 140px;
         }
 
         .three{
             position: absolute;
             top: 240px;
             left: 680px;
+            height: 260px;
             transform: rotate(3deg);
         }
 
         .four{
-            height: 400px;
+            height: 260px;
             position: absolute;
             top: 120px;
             left: 1280px;
@@ -107,6 +110,12 @@
             border-radius: 80px;
         }
 
+        p{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rgb(2, 2, 118);
+        }
+
 /* Responsive Design */
 @media screen and (max-width: 480px) {
 
@@ -135,27 +144,38 @@
     .one {
         top: 120px;
         left: 260px;
+        width: 180px;
+        height: 120px;
     }
 
     .two{
         top: 300px;
         left: 300px;
-        width: 80px;
+        width: 120px;
+        height: 120px;
         transform: rotate(3deg);
     }
 
     .three {
         top: 480px;
         left: 280px;
+        width: 140px;
+        height: 200px;
         transform: rotate(-3deg);
     }
 
     .four{
         width: 200px;
+        height: 160px;
         position: absolute;
         top: 480px;
         left: 20px;
         transform: rotate(2deg);
+    }
+    p{
+        font-size: 12px;
+        margin-top: -1px;
+        
     }
     }
     </style>
@@ -170,16 +190,23 @@
 
         <img class="map" src="./NorthAmerica.jpg" alt="Map" width="300px">
         <div class="sticky-note one" title="1">
-            This is a sticky note! 📌
+            <i style='font-size:20px' class='fas'>&#xf647;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> Publication Date:</b> 
+            <p>Elias Neau: The Bible was published by Elias Neau, a French Huguenot immigrant who was a devout Christian and a prominent figure in the early American Protestant community.</p>
         </div>
         <div class="sticky-note two" title="2">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Note!</b> 
+            <i style='font-size:18px' class='fas'>&#xf303;</i>
+            <p>Neau is known for his work in organizing Bible translations and promoting Christian education.</p>
         </div>
         <div class="sticky-note three" title="3">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 📌1st language & History</b> 
+           <p>The first English Bible in North America was brought by English settlers in the early 17th century. The first complete English-language Bible printed in North America was the Elias Neau Bible in 1703, in New York.</p>
         </div>
         <div class="sticky-note four" title="4">
-            This is a sticky note! 📌
+            <i style='font-size:20px' class='fas'>&#xf06a;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Importance:</b>
+            <p>The Elias Neau Bible was a key milestone in the spread of Christianity and Protestantism in North America, helping to establish the English-language Bible in the colonies, especially among the growing English-speaking Protestant population.</p>
         </div>
     </div>
 </body>
