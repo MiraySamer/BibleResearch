@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Europe</title>
     <style>
       
@@ -24,7 +25,7 @@
 
         .sticky-note {
             position: relative;
-            width: 180px;
+            width: 186px;
             height: 180px;
             background: #ffec409a;
             padding: 20px; 
@@ -106,6 +107,12 @@
             border-radius: 80px;
         }
 
+        p{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rgb(2, 2, 118);
+        }
+
 /* Responsive Design */
 @media screen and (max-width: 480px) {
 
@@ -134,27 +141,38 @@
     .one {
         top: 120px;
         left: 260px;
+        width: 160px;
+        height: 120px;
     }
 
     .two{
         top: 300px;
         left: 300px;
-        width: 80px;
+        width: 100px;
+        height: 120px;
         transform: rotate(3deg);
     }
 
     .three {
         top: 480px;
         left: 280px;
+        width: 130px;
+        height: 190px;
         transform: rotate(-3deg);
     }
 
     .four{
         width: 200px;
+        height: 220px;
         position: absolute;
         top: 440px;
         left: 20px;
         transform: rotate(2deg);
+    }
+    p{
+        font-size: 12px;
+        margin-top: -1px;
+        
     }
     }
     </style>
@@ -168,20 +186,26 @@
     <div class="box">
 
         <img class="map" src="./Europe.jpg" alt="Map" width="300px">
+
         <div class="sticky-note one" title="1">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> Publication Date:</b> <i style='font-size:20px' class='fas'>&#xf647;</i>
+            <p>The Latin Vulgate was primarily translated by St. Jerome between 382 and 405 AD. It became the standard Latin version of the Bible for the Western Christian Church.</p>
         </div>
+
         <div class="sticky-note two" title="2">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Note!</b> <i style='font-size:18px' class='fas'>&#xf303;</i>
+             <p>Jerome’s translation was based on earlier Latin texts and Hebrew and Greek manuscripts.
+            </p>
         </div>
-        <div class="sticky-note three" title="3">
-            This is a sticky note! 📌
+        <div class="sticky-note three" title="3"> 
+           <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 📌1st language & History</b> 
+            <p>St. Jerome: The Latin Vulgate was the work of St. Jerome, a scholar & priest who was commissioned by Pope Damasus I to produce a reliable and consistent Latin translation of the Bible.</p>
         </div>
         <div class="sticky-note four" title="4">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Importance:</b>
+            <i style='font-size:20px' class='fas'>&#xf06a;</i> 
+            <p>The Latin Vulgate became the official Bible of the Catholic Church for centuries, influencing Christian doctrine and biblical scholarship. It made the Bible accessible to a wide audience in the Roman Empire and was used for worship, teaching, and theological study in Latin-speaking regions. It allowed Latin-speaking Christians throughout Europe to have access to the scriptures in their native tongue.</p>
         </div>
     </div>
 </body>
 </html>
-
-
