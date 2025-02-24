@@ -58,33 +58,38 @@
     const planeImg = new Image();
     planeImg.src = "./plane.png"; // Replace with actual plane image
 
-    // Coordinates for flight path (adjust as needed)
+    // Coordinates for flight path
     const flightPath = [
-        { x: 400, y: 250 }, // Africa
-        { x: 470, y: 160 }, // Europe
-        { x: 250, y: 120 }, // North America
+        { x: 420, y: 230 }, // Africa
+        { x: 400, y: 150 }, // Europe
+        { x: 140, y: 140 }, // North America
         { x: 220, y: 300 }, // South America
-        { x: 600, y: 380 }, // Australia
-        { x: 550, y: 120 }  // Asia
+        { x: 600, y: 330 }, // Australia
+        { x: 560, y: 150 }  // Asia
     ];
 
     let index = 0;
     let plane = { x: flightPath[0].x, y: flightPath[0].y };
     let isFlying = false;
+    let trailPoints = [];
 
     function drawScene() {
-        // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw the flight path
+        // Draw dashed flight trail
         ctx.beginPath();
-        ctx.moveTo(flightPath[0].x, flightPath[0].y);
-        for (let i = 1; i <= index; i++) {
-            ctx.lineTo(flightPath[i].x, flightPath[i].y);
-        }
-        ctx.strokeStyle = "red";
+        ctx.setLineDash([5, 5]); // Dashed line pattern
         ctx.lineWidth = 2;
+        ctx.strokeStyle = "black";
+        
+        if (trailPoints.length > 1) {
+            ctx.moveTo(trailPoints[0].x, trailPoints[0].y);
+            for (let i = 1; i < trailPoints.length; i++) {
+                ctx.lineTo(trailPoints[i].x, trailPoints[i].y);
+            }
+        }
         ctx.stroke();
+        ctx.setLineDash([]); // Reset to solid line
 
         // Draw the plane
         ctx.drawImage(planeImg, plane.x - 15, plane.y - 15, 30, 30);
@@ -106,8 +111,11 @@
             }
         }
 
-        plane.x += dx * 0.05; // Smooth transition
-        plane.y += dy * 0.05;
+        plane.x += dx * 0.02; // Adjust speed (smaller values = smoother movement)
+        plane.y += dy * 0.02;
+
+        // Add current position to trail points
+        trailPoints.push({ x: plane.x, y: plane.y });
 
         drawScene();
         requestAnimationFrame(animateFlight);
@@ -118,6 +126,7 @@
             index = 0;
             plane.x = flightPath[0].x;
             plane.y = flightPath[0].y;
+            trailPoints = []; // Clear previous trail
             isFlying = true;
             animateFlight();
         }

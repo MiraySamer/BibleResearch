@@ -91,47 +91,123 @@
 
   /* Tab container */
   .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
 
-        /* Tab buttons */
-        .tab-btn {
-            padding: 10px 20px;
-            border: none;
-            background: #ddd;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+  /* Tab buttons */
+  .tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #c6ccf8;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
 
-        .tab-btn:hover {
-            background: #bbb;
-        }
+  .tab-btn:hover {
+    background:  #34495e59;
+  }
 
-        .tab-btn.active {
-            background: #007bff;
+  .tab-btn.active {
+    background: #34495e;
+    color: white;
+  }
+
+  /* Tab content */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .container {
+    background: url(./background.jpeg) no-repeat center center/cover;
+    padding-bottom: 180px;
+    padding-top: 100px;
+    width: 100%;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 10px;
+}
+
+  .feature {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    flex: 1 1 250px; /* Responsive sizing */
+    max-width: 300px;
+}
+
+  .feature img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.chart {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+}
+        .point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(1, 1, 150);
+            border-radius: 50%;
+            bottom: 20px; /* Align all dots on the same horizontal line */
+        }
+        .comment {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-size: 10px;
+            bottom: 40px; /* Position comments above the dots */
         }
 
-        /* Tab content */
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            margin: auto;
+        .commentt {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-size: 10px;
+            bottom: -20px; /* Position comments above the dots */
         }
 
-        .tab-content.active {
-            display: block;
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+            bottom: 20px;
         }
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
 
@@ -144,30 +220,39 @@
         height: 80px;
     }
 
-    .container {
-        padding: 15px;
-        padding-bottom: 100px;
-        padding-top: 100px;
-    }
-
-
     .nav-links li a{
       font-size: 16px;
       display: inline;
       position: relative;
       margin-right: 0px;
     }
-
         
-            .tab-btn {
-                width: 60%;
-                padding: 6px 10px;
-            }
+    .tab-btn {
+      width: 30%;
+      padding: 8px 10px;
+    }
 
-            .tab-content {
-                width: 95%;
-                padding: 15px;
-            }
+    .tab-content {
+      width: 95%;
+      padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+ 
+    .container {
+        padding: 15px;
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+
+    .features {
+        align-items: center;
+    }
+    
+    .feature {
+        width: 90%;
+    }
 }
 
     </style>
@@ -209,14 +294,52 @@
 
   <div id="history" class="tab-content">
       <h2> History</h2>
-      <p>Explore our interactive map with key locations.</p>
-      <br>
-      <h2>Target Audience</h2>
+      <div class="chart">
+        <div class="line"></div>
+        <div class="point" style="left: 10%;"></div>
+        <div class="comment" style="left: 5%;">Asia <br> (1200 BC – 100 AD)</div>
+        
+        <div class="point" style="left: 25%;"></div>
+        <div class="commentt" style="left: 20%;">Africa <br>  (1st – 4th Century AD)</div>
+        
+        <div class="point" style="left: 40%;"></div>
+        <div class="comment" style="left: 35%;">Europe  <br> (1st – 4th Century AD)</div>
+        
+        <div class="point" style="left: 55%;"></div>
+        <div class="commentt" style="left: 50%;">North America  <br> (15th – 17th Century AD)</div>
+        
+        <div class="point" style="left: 70%;"></div>
+        <div class="comment" style="left: 65%;">South America  <br> (16th Century AD)</div>
+        
+        <div class="point" style="left: 85%;"></div>
+        <div class="commentt" style="left: 80%;">Australia & Oceania  <br> (18th – 19th Century AD)</div>
+      </div>
   </div>
 
   <div id="future" class="tab-content">
       <h2> Future Plans</h2>
-      <p>Check out what has already been explored.</p>
+      <div class="features">
+        <div class="feature">
+          <img src="team-icon.png" alt="Team Icon">
+          <h3>We're all on the same team</h3>
+          <p>Collaboration and teamwork drive our success.</p>
+        </div>
+        <div class="feature">
+          <img src="balance-icon.png" alt="Balance Icon">
+          <h3>A balanced life is a healthy life</h3>
+          <p>We value work-life balance for all employees.</p>
+        </div>
+        <div class="feature">
+          <img src="service-icon.png" alt="Service Icon">
+          <h3>Start with service</h3>
+          <p>Our commitment to service begins with you.</p>
+        </div>
+        <div class="feature">
+          <img src="integrity-icon.png" alt="Integrity Icon">
+          <h3>Do the right thing</h3>
+          <p>Integrity and ethics guide all our actions.</p>
+        </div>
+      </div>
   </div>
 
   <script>
