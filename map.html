@@ -54,7 +54,6 @@
             height: 30px;
             border-radius: 50%;
             cursor: pointer;
-           
         }
 
         /* Positioning the pins (Adjust as needed) */
@@ -74,6 +73,24 @@
         .pin:active {
             transform: scale(1.3);
             background-color: rgb(96, 14, 14);
+        }
+        /* Plane transition*/
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #planeButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        #planeButton img {
+            width: 60px;
+            height: auto;
         }
 
         @media (max-width: 768px) {
@@ -118,7 +135,14 @@
     <h1> Bible translations around the World!</h1>
 
     <div class="map-container">
-        
+        <!-- Canvas for drawing the plane and trail -->
+    <canvas id="canvas" width="800" height="450"></canvas>
+
+    <!-- Plane Button -->
+    <button id="planeButton">
+        <img src="./plane.png" alt="Plane">
+    </button>
+
         <img src="./map.jpg" alt="World Map" width="600px">
         
         <!-- Location Pins -->
@@ -129,6 +153,90 @@
         <a href="SouthAmerica.html" class="pin southamerica" title="Southamerica"><img src="./location.png" alt="Southamerica"></a>
         <a href="Australia.html" class="pin australia" title="Australia"><img src="./location.png" alt="Australia"></a>
     </div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const planeButton = document.getElementById("planeButton");
+    const planeImg = new Image();
+    planeImg.src = "./plane.png"; // Replace with actual plane image
+
+    // Coordinates for flight path
+    const flightPath = [
+        { x: 440, y: 150 },  // Asia
+        { x: 300, y: 230 }, // Africa
+        { x: 300, y: 150 }, // Europe
+        { x: 100, y: 120 }, // North America
+        { x: 180, y: 300 }, // South America
+        { x: 540, y: 330 }, // Australia
+      
+    ];
+
+    let index = 0;
+    let plane = { x: flightPath[0].x, y: flightPath[0].y };
+    let isFlying = false;
+    let trailPoints = [];
+
+    function drawScene() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw dashed flight trail
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]); // Dashed line pattern
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "black";
+        
+        if (trailPoints.length > 1) {
+            ctx.moveTo(trailPoints[0].x, trailPoints[0].y);
+            for (let i = 1; i < trailPoints.length; i++) {
+                ctx.lineTo(trailPoints[i].x, trailPoints[i].y);
+            }
+        }
+        ctx.stroke();
+        ctx.setLineDash([]); // Reset to solid line
+
+        // Draw the plane
+        ctx.drawImage(planeImg, plane.x - 15, plane.y - 15, 30, 30);
+    }
+
+    function animateFlight() {
+        if (!isFlying || index >= flightPath.length - 1) return;
+
+        let nextPoint = flightPath[index + 1];
+        let dx = nextPoint.x - plane.x;
+        let dy = nextPoint.y - plane.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 2) {
+            index++;
+            if (index >= flightPath.length - 1) {
+                isFlying = false;
+                return;
+            }
+        }
+
+        plane.x += dx * 0.04; // Adjust speed (smaller values = smoother movement)
+        plane.y += dy * 0.04;
+
+        // Add current position to trail points
+        trailPoints.push({ x: plane.x, y: plane.y });
+
+        drawScene();
+        requestAnimationFrame(animateFlight);
+    }
+
+    planeButton.addEventListener("click", () => {
+        if (!isFlying) {
+            index = 0;
+            plane.x = flightPath[0].x;
+            plane.y = flightPath[0].y;
+            trailPoints = []; // Clear previous trail
+            isFlying = true;
+            animateFlight();
+        }
+    });
+
+    planeImg.onload = drawScene;
+</script>
 
 </body>
 </html>
