@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Asia</title>
     <style>
       
@@ -40,29 +41,45 @@
         .one{
             position: absolute;
             top: 120px;
-            left: 380px;
+            left: 350px;
+            width: 240px;
+            height: 240px;
         }
 
         .two{
             position: absolute;
             top: 120px;
             left: 980px;
+            width: 200px;
+            height: 140px;
         }
 
         .three{
             position: absolute;
             top: 240px;
             left: 680px;
+            width: 220px;
             transform: rotate(3deg);
         }
 
         .four{
-            height: 400px;
+            height: 380px;
             position: absolute;
             top: 120px;
             left: 1280px;
             transform: none;
             margin-right: 20px;
+        }
+
+        .five{
+            height: 140px;
+            width: 550px;
+            position: absolute;
+            top: 440px;
+            left: 40px;
+            transform: none;
+            text-align: left;
+            line-height: 24px;
         }
 
         .sticky-note::before {
@@ -106,6 +123,12 @@
             border-radius: 80px;
         }
 
+        p{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rgb(2, 2, 118);
+        }
+
 /* Responsive Design */
 @media screen and (max-width: 480px) {
 
@@ -133,28 +156,49 @@
 
     .one {
         top: 120px;
-        left: 260px;
+        left: 280px;
+        width: 280px;
+        height: 160px;
+        transform: rotate(2deg);
     }
 
     .two{
-        top: 300px;
-        left: 300px;
-        width: 80px;
-        transform: rotate(3deg);
+        top: 360px;
+        left: 320px;
+        width: 260px;
+        height: 80px;
+        transform: rotate(-2deg);
     }
 
     .three {
-        top: 480px;
-        left: 280px;
-        transform: rotate(-3deg);
+        top: 530px;
+        left: 300px;
+        width: 280px;
+        height: 120px;
+        transform: rotate(2deg);
     }
 
     .four{
         width: 200px;
+        height: 240px;
         position: absolute;
         top: 440px;
         left: 20px;
-        transform: rotate(2deg);
+        transform: rotate(-2deg);
+        
+    }
+    .five{
+        width: 480px;
+        height: 120px;
+        position: absolute;
+        top: 740px;
+        left: 20px;
+        transform: none;
+    }
+    
+    p{
+        font-size: 12px;
+        margin-top: -1px;
     }
     }
     </style>
@@ -169,17 +213,42 @@
 
         <img class="map" src="./Asia.webp" alt="Map" width="300px">
         <div class="sticky-note one" title="1">
-            This is a sticky note! 📌
+            <i style='font-size:20px' class='fas'>&#xf647;</i>
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 1st language</b> 
+            <p>- The Septuagint (Greek translation of the Hebrew Bible) was the first major translation of the Old Testament, though many early Asian translations were done into languages like Syriac and Aramaic. <br> 
+                - Chinese Bible: The first full Bible translation into Chinese was done in the 19th century by Robert Morrison, a British missionary. His translation was finished in 1823.</p>
         </div>
+
         <div class="sticky-note two" title="2">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 📌Most Common Language </b> 
+            <p> - Is Mandarin Chinese, due to the large population of Chinese speakers.<br>
+                - Hindi is also a significant language in South Asia.</p>
         </div>
+
         <div class="sticky-note three" title="3">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Statistics:</b> 
+            <i style='font-size:18px' class='fas'>&#xf303;</i>
+            <p> - The Bible has been translated over 1,300 languages in Asia, including parts of India, Indonesia & China. <br>
+                - More than 600 million people in Asia access the Bible in their native language. </p>
         </div>
+
         <div class="sticky-note four" title="4">
-            This is a sticky note! 📌
+            <i style='font-size:18px' class='fas'>&#xf582;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Fun Facts:</b>
+            <p> - New Testament has been translated into over 1,400 languages in Asia alone.<br>
+                - Translation work in languages like Tibetan and Mongolian presents challenges due to their unique linguistic and cultural characteristics.<br>
+                - Bible translation software and digital platforms are becoming vital tools in reaching remote areas of Asia with the Bible, as many regions have limited access to printed materials.</p>
         </div>
+
+        <div class="sticky-note five" title="5">
+            <i style='font-size:18px' class='fas'>&#xf05e;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">No Full Bibles:</b>
+            <p> -Afghanistan– Bible translation is incomplete due to political & social challenges.<br>
+                -Bhutan– Only parts of the Bible have been translated.<br>
+                -North Korea– Bible translations are not available due to religious restrictions.<br>
+                -Turkmenistan – Limited access to the Bible due to strict government controls.</p>
+       </div>
+
     </div>
 </body>
 </html>
