@@ -28,7 +28,7 @@
             position: relative;
             width: 180px;
             height: 180px;
-            background: #ffec409a;
+            background: linear-gradient(to bottom right, #faea5b97, #fbd620ec);
             padding: 20px; 
             font-size: 16px;
             font-family: Arial, sans-serif;
@@ -80,28 +80,55 @@
             line-height: 24px;
         }
 
-        .sticky-note::before {
-            content: "";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            width: 12px;
-            height: 12px;
-            background: red;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateX(-50%);
-        }
-
         .sticky-note::after {
             content: "";
             position: absolute;
-            top: -5px;
-            left: 50%;
-            width: 3px;
-            height: 15px;
-            background: darkred;
-            transform: translateX(-50%);
+            top: -20px;
+            left: 45%;
+            width: 40px;
+            height: 50px;
+            background: url('./pin.png') no-repeat center / contain;
+        }
+
+        .sticky-note::before{
+            content: "";
+            position: absolute;
+            background: url('./note.png') no-repeat center / contain;
+        }
+
+        .one::before {
+            top: 180.4px;
+            left: 86.3%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 145.5px;
+            left: 90.9%;
+            width: 20px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 263px;
+            left: 88.6%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 260px;
+            left: 86.5%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 212.5px;
+            left: 95.8%;
+            width: 25px;
+            height: 50px;
         }
 
         #logo{
@@ -192,6 +219,41 @@
         left: 20px;
         transform: none;
     }
+
+    .one::before {
+            top: 120.4px;
+            left: 86.4%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 122px;
+            left: 83.8%;
+            width: 26px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 203px;
+            left: 86.2%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 160px;
+            left: 87.62%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 262.2px;
+            left: 94.3%;
+            width: 25px;
+            height: 50px;
+        }
 
     p{
         font-size: 12px;

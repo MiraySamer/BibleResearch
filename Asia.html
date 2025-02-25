@@ -27,7 +27,7 @@
             position: relative;
             width: 180px;
             height: 180px;
-            background: #ffec409a;
+            background: linear-gradient(to bottom right, #faea5b97, #fbd620ec);
             padding: 20px; 
             font-size: 16px;
             font-family: Arial, sans-serif;
@@ -69,6 +69,7 @@
             left: 1280px;
             transform: none;
             margin-right: 20px;
+            line-height: 22px;
         }
 
         .five{
@@ -82,28 +83,56 @@
             line-height: 24px;
         }
 
-        .sticky-note::before {
-            content: "";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            width: 12px;
-            height: 12px;
-            background: red;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateX(-50%);
-        }
-
+        
         .sticky-note::after {
             content: "";
             position: absolute;
-            top: -5px;
-            left: 50%;
-            width: 3px;
-            height: 15px;
-            background: darkred;
-            transform: translateX(-50%);
+            top: -20px;
+            left: 45%;
+            width: 40px;
+            height: 50px;
+            background: url('./pin.png') no-repeat center / contain;
+        }
+
+        .sticky-note::before{
+            content: "";
+            position: absolute;
+            background: url('./note.png') no-repeat center / contain;
+        }
+
+        .one::before {
+            top: 243px;
+            left: 91.1%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 145px;
+            left: 91.6%;
+            width: 20px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 183px;
+            left: 90.3%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 380px;
+            left: 86.5%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 144px;
+            left: 95.8%;
+            width: 25px;
+            height: 50px;
         }
 
         #logo{
@@ -185,8 +214,9 @@
         top: 440px;
         left: 20px;
         transform: rotate(-2deg);
-        
+        line-height: 16px;
     }
+    
     .five{
         width: 480px;
         height: 120px;
@@ -196,6 +226,41 @@
         transform: none;
     }
     
+    .one::before {
+            top: 160.4px;
+            left: 90.6%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 82px;
+            left: 91.4%;
+            width: 26px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 123px;
+            left: 92.1%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 240px;
+            left: 87.5%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 122.5px;
+            left: 95.2%;
+            width: 25px;
+            height: 50px;
+        }
+
     p{
         font-size: 12px;
         margin-top: -1px;
@@ -235,7 +300,7 @@
         <div class="sticky-note four" title="4">
             <i style='font-size:18px' class='fas'>&#xf582;</i> 
             <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Fun Facts:</b>
-            <p> - New Testament has been translated into over 1,400 languages in Asia alone.<br>
+            <p style="margin-top: -1px;"> - New Testament has been translated into over 1,400 languages in Asia alone.<br>
                 - Translation work in languages like Tibetan and Mongolian presents challenges due to their unique linguistic and cultural characteristics.<br>
                 - Bible translation software and digital platforms are becoming vital tools in reaching remote areas of Asia with the Bible, as many regions have limited access to printed materials.</p>
         </div>
