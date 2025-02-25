@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Africa</title>
     <style>
       
@@ -26,7 +27,7 @@
             position: relative;
             width: 180px;
             height: 180px;
-            background: #ffec409a;
+            background: linear-gradient(to bottom right, #faea5b97, #fbd620ec);
             padding: 20px; 
             font-size: 16px;
             font-family: Arial, sans-serif;
@@ -34,30 +35,37 @@
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             text-align: center;
-            transform: rotate(-3deg);
+            transform: rotate(-2deg);
+
         }
 
         .one{
             position: absolute;
             top: 120px;
-            left: 380px;
+            left: 340px;
+            width: 260px;
+            height: 220px;
         }
 
         .two{
             position: absolute;
             top: 120px;
-            left: 980px;
+            left: 1000px;
+            width: 200px;
+            height: 180px;
         }
 
         .three{
             position: absolute;
             top: 240px;
             left: 680px;
-            transform: rotate(3deg);
+            width: 250px;
+            height: 250px;
+            transform: rotate(2deg);
         }
 
         .four{
-            height: 400px;
+            height: 460px;
             position: absolute;
             top: 120px;
             left: 1280px;
@@ -65,28 +73,66 @@
             margin-right: 20px;
         }
 
-        .sticky-note::before {
-            content: "";
+        .five{
+            height: 120px;
+            width: 550px;
             position: absolute;
-            top: -15px;
-            left: 50%;
-            width: 12px;
-            height: 12px;
-            background: red;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateX(-50%);
+            top: 484px;
+            left: 40px;
+            transform: none;
+            text-align: left;
+            line-height: 24px;
         }
 
         .sticky-note::after {
             content: "";
             position: absolute;
-            top: -5px;
-            left: 50%;
-            width: 3px;
-            height: 15px;
-            background: darkred;
-            transform: translateX(-50%);
+            top: -20px;
+            left: 45%;
+            width: 40px;
+            height: 50px;
+            background: url('./pin.png') no-repeat center / contain;
+        }
+
+        .sticky-note::before{
+            content: "";
+            position: absolute;
+            background: url('./note.png') no-repeat center / contain;
+        }
+
+        .one::before {
+            top: 220px;
+            left: 90%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 185.5px;
+            left: 91.5%;
+            width: 20px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 253.5px;
+            left: 91.5%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 460px;
+            left: 86.5%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 122.5px;
+            left: 95.8%;
+            width: 25px;
+            height: 50px;
         }
 
         #logo{
@@ -104,6 +150,12 @@
         #home:hover{
             background-color: rgba(240, 239, 239, 0.741);
             border-radius: 80px;
+        }
+
+        p{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rgb(2, 2, 118);
         }
 
 /* Responsive Design */
@@ -133,28 +185,84 @@
 
     .one {
         top: 120px;
-        left: 260px;
+        left: 280px;
+        width: 280px;
+        height: 160px;
+        transform: rotate(2deg);
     }
 
     .two{
-        top: 300px;
-        left: 300px;
-        width: 80px;
-        transform: rotate(3deg);
+        top: 360px;
+        left: 320px;
+        width: 260px;
+        height: 100px;
+        transform: rotate(-2deg);
     }
 
     .three {
-        top: 480px;
-        left: 280px;
-        transform: rotate(-3deg);
+        top: 540px;
+        left: 300px;
+        width: 280px;
+        height: 160px;
+        transform: rotate(2deg);
     }
 
     .four{
         width: 200px;
+        height: 240px;
         position: absolute;
         top: 440px;
         left: 20px;
-        transform: rotate(2deg);
+        transform: rotate(-2deg);
+        
+    }
+    .five{
+        width: 480px;
+        height: 120px;
+        position: absolute;
+        top: 760px;
+        left: 20px;
+        transform: none;
+    }
+
+    .one::before {
+            top: 160px;
+            left: 90.6%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .two::before {
+            top: 103px;
+            left: 91%;
+            width: 26px;
+            height: 50px;
+        }
+
+        .three::before {
+            top: 163px;
+            left: 92.2%;
+            width: 25px;
+            height: 50px;
+        }
+
+        .four::before {
+            top: 240px;
+            left: 87.5%;
+            width: 30px;
+            height: 50px;
+        }
+
+        .five::before {
+            top: 122.5px;
+            left: 95.2%;
+            width: 25px;
+            height: 50px;
+        }
+    
+    p{
+        font-size: 12px;
+        margin-top: -1px;
     }
     }
     </style>
@@ -169,19 +277,52 @@
 
         <img class="map" src="./Africa.jpg" alt="Map" width="300px">
         <div class="sticky-note one" title="1">
-            This is a sticky note! 📌
+            <i style='font-size:20px' class='fas'>&#xf647;</i>
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 1st Bible</b> 
+            <p> In 1857 a milestone was reached when Robert Moffat completed a translation of the Bible into Tswana, a language of southern Africa.<br>
+                He also printed it in sections on a handpress. This was the first complete Bible to be printed in Africa and was also the first complete translation into a formerly unwritten African language.</p>
         </div>
+
         <div class="sticky-note two" title="2">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Statistics:</b> 
+            <i style='font-size:18px' class='fas'>&#xf303;</i>
+            <p> By 1990 the entire Bible had been translated into 119 African languages, with portions of it available in additional 434<br>
+                Bible translations still needed :
+                Africa - 558 languages, 16 million people</p>
         </div>
+
         <div class="sticky-note three" title="3">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 📌History </b> 
+            <p> The earliest translations of the whole Bible into an African language were done in Egypt. Known as the Coptic versions, they are believed to date from the 3rd or 4th century.<br>
+                About three centuries later, the Bible was translated into Ethiopic.<br>
+                The hundreds of unwritten languages spoken south of Ethiopia and the Sahara had to await the arrival of missionaries in the 19th century.</p>
         </div>
+
         <div class="sticky-note four" title="4">
-            This is a sticky note! 📌
+            <i style='font-size:18px' class='fas'>&#xf582;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Fun Facts:</b>
+            <p> </p>
         </div>
+
+        <div class="sticky-note five" title="5">
+            <i style='font-size:20px' class='fas'>&#xf06a;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Information:</b>
+            <p style="margin-top: -1px;"> The Bible Society of Nigeria (BSN) translated the first full Bible into Okun in just five years, breaking its previous translation record – completing the Igala Common Language Bible in 11 years.<br>
+                The Okun ‘language’ is a variant of the Yoruba language. </p>
+       </div>
+
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
