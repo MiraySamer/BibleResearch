@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Australia</title>
     <style>
       
@@ -41,28 +42,45 @@
             position: absolute;
             top: 120px;
             left: 380px;
+            width: 220px;
+            height: 240px;
         }
 
         .two{
             position: absolute;
             top: 120px;
             left: 980px;
+            width: 220px;
+            height: 200px;
         }
 
         .three{
             position: absolute;
             top: 240px;
             left: 680px;
+            width: 220px;
+            height: 260px;
             transform: rotate(3deg);
         }
 
         .four{
-            height: 400px;
+            height: 300px;
             position: absolute;
             top: 120px;
             left: 1280px;
             transform: none;
             margin-right: 20px;
+        }
+
+        .five{
+            height: 220px;
+            width: 550px;
+            position: absolute;
+            top: 440px;
+            left: 40px;
+            transform: none;
+            text-align: left;
+            line-height: 24px;
         }
 
         .sticky-note::before {
@@ -106,6 +124,13 @@
             border-radius: 80px;
         }
 
+        p{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rgb(2, 2, 118);
+        }
+
+
 /* Responsive Design */
 @media screen and (max-width: 480px) {
 
@@ -133,28 +158,49 @@
 
     .one {
         top: 120px;
-        left: 260px;
+        left: 280px;
+        width: 280px;
+        height: 120px;
+        transform: rotate(2deg);
     }
 
     .two{
-        top: 300px;
-        left: 300px;
-        width: 80px;
-        transform: rotate(3deg);
+        top: 320px;
+        left: 320px;
+        width: 280px;
+        height: 120px;
+        transform: rotate(-2deg);
     }
 
     .three {
-        top: 480px;
-        left: 280px;
-        transform: rotate(-3deg);
+        top: 520px;
+        left: 300px;
+        width: 280px;
+        height: 120px;
+        transform: rotate(2deg);
     }
 
     .four{
         width: 200px;
+        height: 180px;
         position: absolute;
         top: 440px;
         left: 20px;
-        transform: rotate(2deg);
+        transform: rotate(-2deg);
+        
+    }
+    .five{
+        width: 400px;
+        height: 190px;
+        position: absolute;
+        top: 720px;
+        left: 20px;
+        transform: none;
+    }
+
+    p{
+        font-size: 12px;
+        margin-top: -1px;
     }
     }
     </style>
@@ -169,17 +215,34 @@
 
         <img class="map" src="./Australia.webp" alt="Map" width="300px">
         <div class="sticky-note one" title="1">
-            This is a sticky note! 📌
+            <i style='font-size:20px' class='fas'>&#xf647;</i>
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> History</b> 
+            <p>First Bible entered Australia with the arrival of European settlers in the late 18th century, during the First Fleet that landed in Botany Bay in 1788. The First Fleet was the 1st group of ships that transported convicts, marines & officers from Great Britain to the newly established British colony in Australia.</p>
         </div>
+
         <div class="sticky-note two" title="2">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);"> 📌1st language</b> 
+            <p>First Fleet Arrival (1788): which carried about 1,500 people, also brought with it Christian religious materials, including the Bible. The first chaplain of the colony, Richard Johnson, was a key figure in introducing Christianity to the new colony.
+            </p>
         </div>
+
         <div class="sticky-note three" title="3">
-            This is a sticky note! 📌
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Publisher</b> 
+            <i style='font-size:18px' class='fas'>&#xf303;</i>
+            <p>Richard Johnson was the 1st Anglican chaplain appointed to the colony. He carried a Bible with him and played a central role in the religious life of the early settlement. His mission was not only to provide spiritual guidance but also to lead religious services, including Sunday worship.</p>
         </div>
+
         <div class="sticky-note four" title="4">
-            This is a sticky note! 📌
+            <i style='font-size:18px' class='fas'>	&#xf582;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">Note:</b>
+            <p>The first complete Bible printed in Australia was the Aboriginal language Bible, which began being translated into local languages in the 19th century. The first English Bible printed in Australia was the Book of Psalms in 1814, followed by the full New Testament in 1820.</p>
         </div>
+
+        <div class="sticky-note five" title="5">
+            <i style='font-size:18px' class='fas'>&#xf05e;</i> 
+            <b style="font-size: 15px; color: rgba(10, 2, 45, 0.737);">No Full Bibles:</b>
+            <p> There are still areas where the Bible is not fully translated, primarily in Indigenous Australian languages spoken by smaller communities. While some languages like Pitjantjatjara and Yolŋu Matha have parts of the Bible translated, many other Aboriginal languages lack full translations. Translation efforts are ongoing, but challenges such as logistical issues, language diversity, and limited resources affect progress, especially for smaller or endangered languages.</p>
+       </div>
     </div>
 </body>
 </html>
