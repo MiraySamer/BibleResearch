@@ -10,7 +10,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
         }
         .container {
             position: relative;
@@ -31,7 +30,7 @@
             cursor: pointer;
         }
         #planeButton img {
-            width: 50px;
+            width: 60px;
             height: auto;
         }
     </style>
@@ -60,12 +59,13 @@
 
     // Coordinates for flight path
     const flightPath = [
+        { x: 560, y: 150 },  // Asia
         { x: 420, y: 230 }, // Africa
         { x: 400, y: 150 }, // Europe
         { x: 140, y: 140 }, // North America
         { x: 220, y: 300 }, // South America
-        { x: 600, y: 330 }, // Australia
-        { x: 560, y: 150 }  // Asia
+        { x: 700, y: 330 }, // Australia
+      
     ];
 
     let index = 0;
@@ -111,8 +111,8 @@
             }
         }
 
-        plane.x += dx * 0.02; // Adjust speed (smaller values = smoother movement)
-        plane.y += dy * 0.02;
+        plane.x += dx * 0.04; // Adjust speed (smaller values = smoother movement)
+        plane.y += dy * 0.04;
 
         // Add current position to trail points
         trailPoints.push({ x: plane.x, y: plane.y });

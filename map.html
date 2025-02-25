@@ -80,6 +80,7 @@
             top: 0;
             left: 0;
         }
+
         #planeButton {
             position: absolute;
             top: 10px;
@@ -88,6 +89,7 @@
             border: none;
             cursor: pointer;
         }
+
         #planeButton img {
             width: 60px;
             height: auto;
@@ -162,13 +164,12 @@
 
     // Coordinates for flight path
     const flightPath = [
-        { x: 440, y: 150 },  // Asia
-        { x: 300, y: 230 }, // Africa
-        { x: 300, y: 150 }, // Europe
-        { x: 100, y: 120 }, // North America
-        { x: 180, y: 300 }, // South America
-        { x: 540, y: 330 }, // Australia
-      
+    { x: 560, y: 150 },  // Asia
+        { x: 420, y: 230 }, // Africa
+        { x: 400, y: 150 }, // Europe
+        { x: 140, y: 140 }, // North America
+        { x: 220, y: 300 }, // South America
+        { x: 700, y: 330 }, // Australia
     ];
 
     let index = 0;
@@ -234,7 +235,6 @@
             animateFlight();
         }
     });
-
     planeImg.onload = drawScene;
 </script>
 
