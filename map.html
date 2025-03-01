@@ -75,7 +75,7 @@
             background-color: rgb(96, 14, 14);
         }
         /* Plane transition*/
-        canvas {
+        #canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -88,14 +88,11 @@
             background: none;
             border: none;
             cursor: pointer;
-        }
-
-        #planeButton img {
             width: 60px;
             height: auto;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
         h1 {
             font-size: 28px;
             margin-top: 50px;
@@ -125,6 +122,14 @@
             height: 20px;
             top: 18px;
         }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 260px;
+        }
 }
     </style>
 </head>
@@ -137,24 +142,25 @@
     <h1> Bible translations around the World!</h1>
 
     <div class="map-container">
-        <!-- Canvas for drawing the plane and trail -->
-    <canvas id="canvas" width="800" height="450"></canvas>
+            <!-- Canvas for drawing the plane and trail -->
+        <canvas id="canvas" width="800" height="450"></canvas>
 
-    <!-- Plane Button -->
-    <button id="planeButton">
-        <img src="./plane.png" alt="Plane">
-    </button>
+        <!-- Plane Button -->
+        <button id="planeButton">
+            <img src="./plane.png" alt="Plane">
+        </button>
 
-        <img src="./map.jpg" alt="World Map" width="600px">
-        
-        <!-- Location Pins -->
-        <a href="NorthAmerica.html" class="pin northamerica" title="Northamerica"><img src="./location.png" alt="Northamerica"></a>
-        <a href="Europe.html" class="pin europe" title="Europe"><img src="./location.png" alt="Europe"></a>
-        <a href="Africa.html" class="pin africa" title="Africa"><img src="./location.png" alt="Africa"></a>
-        <a href="Asia.html" class="pin asia" title="Asia"><img src="./location.png" alt="Asia"></a>
-        <a href="SouthAmerica.html" class="pin southamerica" title="Southamerica"><img src="./location.png" alt="Southamerica"></a>
-        <a href="Australia.html" class="pin australia" title="Australia"><img src="./location.png" alt="Australia"></a>
+            <img src="./map.jpg" alt="World Map" width="600px">
+            
+            <!-- Location Pins -->
+            <a href="NorthAmerica.html" class="pin northamerica" title="Northamerica"><img src="./location.png" alt="Northamerica"></a>
+            <a href="Europe.html" class="pin europe" title="Europe"><img src="./location.png" alt="Europe"></a>
+            <a href="Africa.html" class="pin africa" title="Africa"><img src="./location.png" alt="Africa"></a>
+            <a href="Asia.html" class="pin asia" title="Asia"><img src="./location.png" alt="Asia"></a>
+            <a href="SouthAmerica.html" class="pin southamerica" title="Southamerica"><img src="./location.png" alt="Southamerica"></a>
+            <a href="Australia.html" class="pin australia" title="Australia"><img src="./location.png" alt="Australia"></a>
     </div>
+    
 <script>
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -164,12 +170,12 @@
 
     // Coordinates for flight path
     const flightPath = [
-        { x: 480, y: 180 },  // Asia
-        { x: 340, y: 20 }, // Africa
-        { x: 300, y: 150 }, // Europe
+        { x: 460, y: 160 },  // Asia
+        { x: 340, y: 260 }, // Africa
+        { x: 320, y: 150 }, // Europe
         { x: 100, y: 120 }, // North America
-        { x: 180, y: 300 }, // South America
-        { x: 540, y: 330 }, // Australi
+        { x: 200, y: 360 }, // South America
+        { x: 560, y: 360 }, // Australia
     ];
 
     let index = 0;
